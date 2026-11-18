@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TSB FARM — Élevage avicole et vente de poulets, poules pondeuses et œufs au Sénégal.">
+  <meta name="theme-color" content="#173d2b">
+  <title>TSB FARM | Élevage avicole & vente de volailles</title>
+  <style>
+    :root{
+      --forest:#173d2b;--forest2:#24583c;--leaf:#66845a;--cream:#f7f6ef;
+      --gold:#e5b84f;--ink:#1d2b22;--muted:#65736a;--white:#fff;
+      --line:#e7e9df;--shadow:0 18px 50px rgba(23,61,43,.10)
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,Arial,Helvetica,sans-serif;color:var(--ink);background:#fff;line-height:1.65}
+    a{text-decoration:none;color:inherit}
+    .wrap{width:min(1160px,90%);margin:auto}
+    .topline{background:var(--forest);color:#eaf0e8;font-size:.84rem;padding:8px 0}
+    .topline .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    .nav{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand-mark{width:46px;height:46px;border-radius:14px;background:var(--forest);color:var(--gold);display:grid;place-items:center;font-weight:900;font-size:1.12rem;letter-spacing:-1px}
+    .brand-name{font-size:1.28rem;font-weight:900;letter-spacing:1.4px;color:var(--forest);line-height:1.1}
+    .brand-sub{display:block;font-size:.66rem;font-weight:700;letter-spacing:1.35px;color:var(--muted);margin-top:5px}
+    nav{display:flex;align-items:center;gap:28px;font-size:.92rem;font-weight:700;color:#435348}
+    nav a:hover{color:var(--leaf)}
+    .nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--forest);color:#fff;padding:13px 20px;border-radius:8px;font-weight:800;transition:.2s}
+    .nav-cta:hover,.btn:hover{background:var(--forest2);transform:translateY(-1px)}
+    .hero{background:linear-gradient(110deg,#f7f6ef 0%,#f7f6ef 58%,#e9eee3 58%,#e9eee3 100%);overflow:hidden}
+    .hero-grid{min-height:610px;display:grid;grid-template-columns:1.03fr .97fr;align-items:center;gap:52px;padding:70px 0}
+    .kicker{display:inline-flex;align-items:center;gap:9px;color:var(--leaf);font-size:.78rem;font-weight:900;letter-spacing:2px;text-transform:uppercase}
+    .kicker:before{content:"";width:26px;height:2px;background:var(--gold)}
+    h1{font-size:clamp(2.8rem,5.4vw,5rem);line-height:1.04;letter-spacing:-2px;color:var(--forest);margin:20px 0}
+    h1 em{font-style:normal;color:var(--leaf)}
+    .hero-copy{max-width:550px;color:#5d6b61;font-size:1.08rem}
+    .hero-actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}
+    .btn-outline{display:inline-flex;align-items:center;justify-content:center;border:1.5px solid #aab8a8;color:var(--forest);padding:12px 20px;border-radius:8px;font-weight:800}
+    .btn-outline:hover{background:#fff}
+    .hero-note{margin-top:27px;color:#758176;font-size:.84rem}
+    .hero-photo{position:relative;min-height:420px;border-radius:24px;background:linear-gradient(145deg,#dce8d3,#f0dfb0);display:grid;place-items:center;overflow:hidden;box-shadow:var(--shadow)}
+    .hero-photo:before,.hero-photo:after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.25)}
+    .hero-photo:before{width:330px;height:330px;top:-110px;right:-60px}
+    .hero-photo:after{width:240px;height:240px;bottom:-130px;left:-60px}
+    .bird{font-size:clamp(10rem,21vw,16rem);filter:drop-shadow(0 22px 18px rgba(39,62,32,.18));z-index:1}
+    .photo-label{position:absolute;bottom:22px;left:22px;z-index:2;background:#fff;padding:12px 16px;border-radius:10px;color:var(--forest);font-size:.82rem;font-weight:900;box-shadow:0 8px 24px #173d2b16}
+    section{padding:88px 0}
+    .section-head{text-align:center;max-width:690px;margin:0 auto 42px}
+    .section-head .kicker{justify-content:center}
+    h2{font-size:clamp(2rem,4vw,3.15rem);line-height:1.12;letter-spacing:-1px;color:var(--forest);margin:14px 0}
+    .section-head p{color:var(--muted);margin:0}
+    .products{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .product{border:1px solid var(--line);border-radius:16px;padding:30px;background:#fff;box-shadow:0 8px 28px rgba(23,61,43,.045);transition:.2s}
+    .product:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+    .product-icon{width:62px;height:62px;border-radius:16px;background:var(--cream);display:grid;place-items:center;font-size:2rem}
+    .product h3{color:var(--forest);font-size:1.2rem;margin:20px 0 8px}
+    .product p{color:var(--muted);font-size:.94rem;margin:0}
+    .about{background:var(--cream)}
+    .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}
+    .about-art{min-height:360px;border-radius:22px;background:linear-gradient(145deg,#dce8d3,#ead9a9);display:grid;place-items:center;font-size:9rem;position:relative;overflow:hidden}
+    .about-art span{position:absolute;bottom:22px;left:22px;background:#fff;border-radius:9px;padding:10px 14px;font-size:.78rem;font-weight:900;color:var(--forest)}
+    .about-text p{color:var(--muted)}
+    .values{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}
+    .value{background:#fff;padding:14px;border-radius:10px;color:var(--forest);font-weight:800;font-size:.86rem}
+    .value b{display:block;font-size:1.2rem;margin-bottom:3px}
+    .contact{background:var(--forest);color:#fff;text-align:center}
+    .contact h2{color:#fff}
+    .contact p{color:#d7e2d8;max-width:620px;margin:0 auto 28px}
+    .contact .kicker{color:#f1cf78;justify-content:center}
+    .contact .btn{background:var(--gold);color:#263526}
+    .contact .btn:hover{background:#f0c967}
+    .contact-detail{margin-top:18px;color:#dce7dc;font-size:.92rem}
+    footer{background:#102d20;color:#d8e3d9;padding:24px 0}
+    footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center;font-size:.86rem}
+    .footer-brand{font-weight:900;letter-spacing:1.4px;color:#fff}
+    @media(max-width:850px){
+      .nav{padding:13px 0;flex-wrap:wrap}.nav nav{order:3;width:100%;justify-content:space-between;gap:12px;font-size:.84rem}.nav-cta{padding:10px 13px;font-size:.84rem}
+      .hero-grid{grid-template-columns:1fr;gap:34px;padding:58px 0}.hero-photo{min-height:310px}
+      .products{grid-template-columns:1fr}.about-grid{grid-template-columns:1fr;gap:32px}.about-art{min-height:260px}
+    }
+    @media(max-width:480px){.topline .wrap{font-size:.75rem}.brand-name{font-size:1.1rem}.nav-cta{font-size:.78rem}.values{grid-template-columns:1fr}.hero-photo{min-height:260px}section{padding:66px 0}}
+  </style>
+</head>
+<body>
+  <div class="topline">
+    <div class="wrap"><span>TSB FARM ✨ · Élevage avicole</span><span>Votre partenaire en produits avicoles</span></div>
+  </div>
+
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#accueil" aria-label="TSB FARM, accueil">
+        <span class="brand-mark">TSB</span>
+        <span><span class="brand-name">TSB FARM ✨</span><span class="brand-sub">ÉLEVAGE AVICOLE & VOLAILLES</span></span>
+      </a>
+      <nav aria-label="Navigation principale">
+        <a href="#accueil">Accueil</a><a href="#produits">Nos produits</a><a href="#apropos">Notre ferme</a><a href="#contact">Contact</a>
+      </nav>
+      <a class="nav-cta" href="https://wa.me/221775262686">Commander</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="accueil">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="kicker">Bienvenue chez TSB FARM</div>
+          <h1>L’élevage avicole, avec <em>soin et ambition.</em></h1>
+          <p class="hero-copy">TSB FARM est votre ferme avicole dédiée à l’élevage de volailles et à la vente de produits avicoles. Découvrez nos activités et contactez-nous pour connaître les disponibilités.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#produits">Découvrir nos produits</a>
+            <a class="btn-outline" href="https://wa.me/221775262686">Nous contacter</a>
+          </div>
+          <div class="hero-note">Poulets de chair · Poules pondeuses · Œufs</div>
+        </div>
+        <div class="hero-photo" role="img" aria-label="Illustration d'une poule dans un décor naturel">
+          <div class="bird">🐔</div>
+          <div class="photo-label">TSB FARM · LA FERME AVICOLE</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="produits">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">Nos activités</div>
+          <h2>Nos produits avicoles</h2>
+          <p>Retrouvez les principales activités de TSB FARM. Pour les commandes, les quantités et les tarifs, écrivez-nous directement.</p>
+        </div>
+        <div class="products">
+          <article class="product"><div class="product-icon">🐓</div><h3>Poulets de chair</h3><p>Volailles destinées à la consommation, disponibles selon le calendrier et les stocks de l’élevage.</p></article>
+          <article class="product"><div class="product-icon">🐔</div><h3>Poules pondeuses</h3><p>Élevage de poules pondeuses pour une activité tournée vers la production d’œufs.</p></article>
+          <article class="product"><div class="product-icon">🥚</div><h3>Œufs</h3><p>Renseignez-vous sur la disponibilité des œufs et les possibilités de commande auprès de notre ferme.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="apropos">
+      <div class="wrap about-grid">
+        <div class="about-art" aria-hidden="true">🌱🐓<span>TSB FARM ✨</span></div>
+        <div class="about-text">
+          <div class="kicker">À propos de nous</div>
+          <h2>TSB FARM, une ambition qui prend son envol.</h2>
+          <p>TSB FARM est un projet d’élevage avicole construit autour d’une ambition : développer une ferme sérieuse, attentive à ses animaux et proche de ses clients.</p>
+          <p>Notre objectif est de faire grandir progressivement nos activités et de proposer des produits avicoles dans une relation fondée sur la confiance.</p>
+          <div class="values">
+            <div class="value"><b>01</b>Le soin des animaux</div>
+            <div class="value"><b>02</b>La qualité</div>
+            <div class="value"><b>03</b>La confiance</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap">
+        <div class="kicker">Contact & commandes</div>
+        <h2>Un renseignement ? Une commande ?</h2>
+        <p>Contactez directement TSB FARM sur WhatsApp pour demander les disponibilités, les prix ou obtenir plus d’informations sur nos produits avicoles.</p>
+        <a class="btn" href="https://wa.me/221775262686">Écrire à TSB FARM sur WhatsApp</a>
+        <div class="contact-detail">WhatsApp : +221 77 526 26 86</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap"><span class="footer-brand">TSB FARM ✨</span><span>Élevage avicole & vente de volailles</span><span>© 2026 TSB FARM. Tous droits réservés.</span></div>
+  </footer>
+</body>
+</html>
